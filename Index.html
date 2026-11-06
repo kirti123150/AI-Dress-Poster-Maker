@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Dress Poster Maker</title>
+<style>
+body {
+  font-family: Arial;
+  background: #f7edf3;
+  text-align: center;
+  padding: 20px;
+}
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 420px;
+  margin: auto;
+}
+h1 { color: #a12d68; }
+input, button {
+  padding: 12px;
+  margin: 10px;
+  width: 90%;
+}
+button {
+  background: #a12d68;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+}
+#preview {
+  width: 100%;
+  margin-top: 15px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>TRINETRA FASHION</h1>
+<h3>AI Dress Poster Maker</h3>
+<p>अपनी ड्रेस की फोटो चुनें</p>
+<input type="file" id="photo" accept="image/*">
+<img id="preview" style="display:none">
+<input id="brand" placeholder="Brand Name">
+<input id="price" placeholder="Dress Price">
+<button onclick="makePoster()">Create Poster</button>
+</div>
+<script>
+function makePoster() {
+ const file = document.getElementById("photo").files[0];
+ if (!file) {
+   alert("पहले Dress Photo चुनें");
+   return;
+ }
+ const image = document.getElementById("preview");
+ image.src = URL.createObjectURL(file);
+ image.style.display = "block";
+ alert("आपका पहला Dress Preview तैयार है!");
+}
+</script>
+</body>
+</html>
